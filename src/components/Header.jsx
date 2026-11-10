@@ -1,26 +1,63 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import './Header.css';
 
 function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  
+  // Toggle menu open/close
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+  
+  // Close menu when a nav link is clicked
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+  
   return (
-    <header style={headerStyle}>
-      <div className="container" style={containerStyle}>
-        <Link to="/" style={logoStyle}>
-          <span style={logoTextStyle}>Mahogra Madu</span>
+    <header className="header">
+      <div className="container header__container">
+        {/* Logo */}
+        <Link to="/" className="header__logo" onClick={closeMenu}>
+          <span className="header__logo-text">Mahogra Madu</span>
         </Link>
         
-        <nav style={navStyle}>
-          <ul style={navListStyle}>
-            <li>
-              <Link to="/" style={navLinkStyle}>Home</Link>
+        {/* Hamburger Button - Mobile Only */}
+        <button 
+          className={`header__hamburger ${isMenuOpen ? 'header__hamburger--open' : ''}`}
+          onClick={toggleMenu}
+          aria-label="Toggle navigation menu"
+          aria-expanded={isMenuOpen}
+          type="button"
+        >
+          <span className="header__hamburger-line"></span>
+          <span className="header__hamburger-line"></span>
+          <span className="header__hamburger-line"></span>
+        </button>
+        
+        {/* Navigation Menu */}
+        <nav className={`header__nav ${isMenuOpen ? 'header__nav--open' : ''}`}>
+          <ul className="header__nav-list">
+            <li className="header__nav-item">
+              <Link to="/" className="header__nav-link" onClick={closeMenu}>
+                Beranda
+              </Link>
             </li>
-            <li>
-              <Link to="/about" style={navLinkStyle}>About</Link>
+            <li className="header__nav-item">
+              <Link to="/about" className="header__nav-link" onClick={closeMenu}>
+                Tentang
+              </Link>
             </li>
-            <li>
-              <Link to="/products" style={navLinkStyle}>Products</Link>
+            <li className="header__nav-item">
+              <Link to="/products" className="header__nav-link" onClick={closeMenu}>
+                Produk
+              </Link>
             </li>
-            <li>
-              <Link to="/contact" style={navLinkStyle}>Contact</Link>
+            <li className="header__nav-item">
+              <Link to="/contact" className="header__nav-link" onClick={closeMenu}>
+                Kontak
+              </Link>
             </li>
           </ul>
         </nav>
@@ -28,53 +65,5 @@ function Header() {
     </header>
   );
 }
-
-// Inline styles for Phase 1 (will be refined later)
-const headerStyle = {
-  backgroundColor: 'var(--color-white)',
-  boxShadow: 'var(--shadow-sm)',
-  position: 'sticky',
-  top: 0,
-  zIndex: 'var(--z-index-sticky)',
-  height: 'var(--header-height)',
-  display: 'flex',
-  alignItems: 'center'
-};
-
-const containerStyle = {
-  display: 'flex',
-  justifyContent: 'space-between',
-  alignItems: 'center'
-};
-
-const logoStyle = {
-  textDecoration: 'none'
-};
-
-const logoTextStyle = {
-  fontSize: 'var(--font-size-xl)',
-  color: 'var(--color-primary)',
-  fontFamily: 'var(--font-heading)',
-  fontWeight: 'var(--font-weight-bold)',
-  display: 'block'
-};
-
-const navStyle = {
-  overflow: 'auto'
-};
-
-const navListStyle = {
-  display: 'flex',
-  gap: 'var(--spacing-lg)',
-  alignItems: 'center',
-  flexWrap: 'wrap'
-};
-
-const navLinkStyle = {
-  color: 'var(--color-text)',
-  fontWeight: 'var(--font-weight-medium)',
-  fontSize: 'var(--font-size-base)',
-  transition: 'color var(--transition-fast)'
-};
 
 export default Header;
