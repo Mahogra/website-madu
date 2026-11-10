@@ -1,0 +1,308 @@
+/* 
+ * Home Page Styles - Mahogra Madu
+ */
+
+.home-page {
+  padding: 0;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+  position: relative;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: var(--color-cream-dark);
+}
+
+.hero__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--color-sage-green) 0%, var(--color-forest-green) 100%);
+  opacity: 0.1;
+  z-index: 0;
+}
+
+/* Honeycomb pattern overlay (CSS-only) */
+.hero__background::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(212, 165, 116, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(139, 168, 136, 0.1) 0%, transparent 50%);
+  z-index: 1;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+.hero__content {
+  max-width: 700px;
+  text-align: center;
+  margin: 0 auto;
+  padding: var(--spacing-3xl) var(--spacing-md);
+}
+
+.hero__title {
+  font-size: var(--font-size-5xl);
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-md);
+  font-weight: var(--font-weight-bold);
+}
+
+.hero__subtitle {
+  font-size: var(--font-size-2xl);
+  color: var(--color-secondary);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--spacing-md);
+}
+
+.hero__description {
+  font-size: var(--font-size-lg);
+  color: var(--color-text);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--spacing-xl);
+}
+
+.hero__actions {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ===== BRAND INTRODUCTION ===== */
+.brand-intro {
+  padding: var(--spacing-3xl) 0;
+  background-color: var(--color-white);
+}
+
+.brand-intro__content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.brand-intro__content h2 {
+  font-size: var(--font-size-3xl);
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-lg);
+}
+
+.brand-intro__content p {
+  font-size: var(--font-size-lg);
+  color: var(--color-text);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--spacing-md);
+}
+
+.brand-intro__content p:last-child {
+  margin-bottom: 0;
+}
+
+/* ===== FEATURED PRODUCTS ===== */
+.featured-products {
+  padding: var(--spacing-3xl) 0;
+  background-color: var(--color-cream);
+}
+
+.featured-products__header {
+  text-align: center;
+  margin-bottom: var(--spacing-2xl);
+}
+
+.featured-products__header h2 {
+  font-size: var(--font-size-3xl);
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.featured-products__header p {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-light);
+}
+
+.featured-products__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.featured-products__cta {
+  text-align: center;
+  margin-top: var(--spacing-xl);
+}
+
+/* Empty state */
+.featured-products__empty {
+  text-align: center;
+  padding: var(--spacing-3xl) var(--spacing-md);
+}
+
+.featured-products__empty p {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-light);
+  margin-bottom: var(--spacing-xl);
+}
+
+/* ===== WHY CHOOSE US ===== */
+.why-choose {
+  padding: var(--spacing-3xl) 0;
+  background-color: var(--color-white);
+}
+
+.why-choose__title {
+  font-size: var(--font-size-3xl);
+  color: var(--color-primary);
+  text-align: center;
+  margin-bottom: var(--spacing-2xl);
+}
+
+.why-choose__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-xl);
+}
+
+.why-choose__item {
+  text-align: center;
+  padding: var(--spacing-lg);
+}
+
+.why-choose__icon {
+  font-size: 3rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.why-choose__item h3 {
+  font-size: var(--font-size-xl);
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.why-choose__item p {
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  line-height: var(--line-height-relaxed);
+}
+
+/* ===== FINAL CTA ===== */
+.final-cta {
+  padding: var(--spacing-3xl) 0;
+  background: linear-gradient(135deg, var(--color-forest-green) 0%, var(--color-sage-green) 100%);
+  color: var(--color-white);
+}
+
+.final-cta__content {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.final-cta__content h2 {
+  font-size: var(--font-size-3xl);
+  color: var(--color-white);
+  margin-bottom: var(--spacing-md);
+}
+
+.final-cta__content p {
+  font-size: var(--font-size-lg);
+  color: var(--color-cream);
+  margin-bottom: var(--spacing-xl);
+  line-height: var(--line-height-relaxed);
+}
+
+.final-cta__actions {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1023px) {
+  .hero {
+    min-height: 500px;
+  }
+  
+  .hero__title {
+    font-size: var(--font-size-4xl);
+  }
+  
+  .hero__subtitle {
+    font-size: var(--font-size-xl);
+  }
+  
+  .why-choose__grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-lg);
+  }
+}
+
+@media (max-width: 639px) {
+  .hero {
+    min-height: 450px;
+  }
+  
+  .hero__content {
+    padding: var(--spacing-2xl) var(--spacing-md);
+  }
+  
+  .hero__title {
+    font-size: var(--font-size-3xl);
+  }
+  
+  .hero__subtitle {
+    font-size: var(--font-size-lg);
+  }
+  
+  .hero__description {
+    font-size: var(--font-size-base);
+  }
+  
+  .hero__actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .hero__actions .button {
+    width: 100%;
+  }
+  
+  .brand-intro__content h2,
+  .featured-products__header h2,
+  .why-choose__title,
+  .final-cta__content h2 {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .featured-products__grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .why-choose__grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+  
+  .final-cta__actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .final-cta__actions .button {
+    width: 100%;
+  }
+}

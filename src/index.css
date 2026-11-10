@@ -1,0 +1,15 @@
+/* 
+ * Main CSS Entry Point - Mahogra Madu
+ * Imports all global styles
+ */
+
+/* Import CSS Variables first */
+@import './styles/variables.css';
+
+/* Import Global Styles */
+@import './styles/global.css';
+
+/* 
+ * Component-specific styles will be handled inline in JSX files
+ * or imported individually when needed
+ */
